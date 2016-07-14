@@ -1,15 +1,23 @@
-var webGraph = new GitGraph({
-  template: "metro",
-  orientation: "horizontal",
-  mode: "compact",
-  elementId: 'web-backend-graph',
+'use strict';
+
+// --------------------------------------------
+// ---------------- MOBILE FLOW ---------------
+// --------------------------------------------
+
+var mobileGraph = new GitGraph({
+  template: 'metro',
+  orientation: 'horizontal',
+  mode: 'compact',
+  elementId: 'mobile-graph',
 });
 
 // Init master and dev branches
-var master = webGraph.branch('master')
-                     .commit('Initial commit');
-var dev = webGraph.branch('dev');
-
+var master = mobileGraph.branch('master')
+                        .commit('Initial commit');
+var dev = mobileGraph.branch('dev')
+                     .commit('Dev branch');
+var build = mobileGraph.branch('build')
+                       .commit('Build 1');
 
 
 // Graph epic
@@ -32,8 +40,8 @@ thiagoGraph.merge(epicGraph);
 
 
 
-// Merge graph epic into dev
-epicGraph.merge(dev);
+// Merge graph epic into build
+epicGraph.merge(build);
 
 
 
@@ -54,4 +62,22 @@ thiagoMobile.merge(epicSteps);
 
 
 // Merge steps epic into dev
-epicSteps.merge(dev);
+epicSteps.merge(build);
+
+
+
+// Merge build into dev
+build.merge(dev);
+
+
+
+// Hotfix
+var hotfix = master.branch('bernardo/fix-script-tag')
+                   .commit('Removed unused closing script tag from index page.');
+hotfix.merge(master);
+master.merge(dev);
+
+
+
+// Merge dev into master
+dev.merge(master);
