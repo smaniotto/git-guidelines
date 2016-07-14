@@ -5,9 +5,9 @@
 // --------------------------------------------
 
 var webGraph = new GitGraph({
-  template: "metro",
-  orientation: "horizontal",
-  mode: "compact",
+  template: 'metro',
+  orientation: 'horizontal',
+  mode: 'compact',
   elementId: 'web-backend-graph',
 });
 
