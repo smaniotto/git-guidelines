@@ -1,0 +1,21 @@
+{
+  "name": "git-guidelines",
+  "homepage": "https://github.com/smaniotto/git-guidelines",
+  "authors": [
+    "Bernardo Smaniotto <be.smaniotto@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gitgraph.js": "^1.2.3"
+  }
+}
