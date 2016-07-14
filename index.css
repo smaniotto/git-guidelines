@@ -1,0 +1,14 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.graph {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+}
+
+.graph h1 {
+  font-size: 25px;
+  margin: 0;
+}
