@@ -18,14 +18,42 @@
   </head>
 
   <body>
-    <div class="graph">
+    <div class="flow">
       <h1>Web / Backend</h1>
-      <canvas id="web-backend-graph"></canvas>
+
+      <div class="flow__graph">
+        <canvas id="web-backend-graph"></canvas>
+      </div>
+
+      <div class="flow__steps">
+        <h2>New features</h2>
+        <ol>
+          <li>Create branch <strong>epic/name</strong> from <strong>dev</strong>.</li>
+          <li>Create branch <strong>dev-name/feature</strong> from <strong>epic/name</strong>.</li>
+          <li>When the feature is done, create a PR to merge <strong>dev-name/feature</strong> into <strong>epic/name</strong>. Add the <strong>under development</strong> label and assign to the reviewer.</li>
+          <li>The assignee should review the code, add any comments regarding: typos, suggestions, mistakes. When the comment-fix iteration is done, the assignee comments a <strong>:+1</strong> on the PR root. This means that the PR is good to merge and it should be done by the person who created it.</li>
+          <li>Continue this flow inside the epic branch, until the whole feature is complete.</li>
+          <li>After that, create a PR to merge <strong>epic/name</strong> into <strong>dev</strong>, adding the <strong>ready</strong> label. This one doesn't require code review and can be merge directly.</li>
+          <li>Continue this flow until all epics are done. After that, create a PR from <strong>dev</strong> to </strong>master</strong>. The name should be the release version and add the <strong>deploy</strong> label.</li>
+          <li>Create a release tag with the updated version and add the changelog, separating into: features, improvements and bug fixes.</li>
+        </ol>
+
+        <h2>Hotfix</h2>
+        <ol>
+          <li>Create branch <strong>dev-name/fix-name</strong> from <strong>master</strong>.</li>
+          <li>When the fix is done, create a PR to merge <strong>dev-name/fix-name</strong> into <strong>master</strong>. Add the <strong>bug</strong> and <strong>ready</strong> labels and assign to the reviewer.</li>
+          <li>The assignee should review the code, add any comments regarding: typos, suggestions, mistakes. When the comment-fix iteration is done, the assignee comments a <strong>:+1</strong> on the PR root. This means that the PR is good to merge and it should be done by the person who created it.</li>
+          <li>Create a release tag with the updated version and add the fix(es) to the changelog.</li>
+        </ol>
+      </div>
     </div>
 
-    <div class="graph">
+    <div class="flow">
       <h1>Mobile</h1>
-      <canvas id="mobile-graph"></canvas>
+
+      <div class="flow__graph">
+        <canvas id="mobile-graph"></canvas>
+      </div>
     </div>
 
     <!-- Load third-party scripts -->
